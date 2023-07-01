@@ -1,0 +1,236 @@
+// App Component Styling
+.App {
+    min-height: 100vh;
+}
+
+// .hiddent {
+//     visibility: hidden;
+// }
+
+.error-message {
+    color: var(--primary-red);
+    font-size: 10px;
+    font-weight: bolder;
+    visibility: hidden;
+    // display: none;
+}
+
+.error-message.visible {
+    visibility: visible;
+}
+
+h1 {
+    color: green;
+}
+
+.App {
+    background-color: var(--neutral-white);
+    background-image: url("/images/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-size: 100% 24%;
+    background-position: top center;
+}
+// ======================
+
+
+// Card Component Styling
+.card {
+    --card-border-radius: 10px;
+    position: relative;
+    margin: 0 auto;
+    // border: 1px solid red;
+    color: var(--neutral-light-grayish-violet);
+    padding: 1rem;
+}
+
+.card__logo {
+    width: 50px;
+    margin-bottom: 2.5rem;
+}
+
+.card__front {
+    background-image: url("/images/bg-card-front.png");
+    border-radius: var(--card-border-radius);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    padding: 0.9rem;
+    max-width: 20rem;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+    left: -10px;
+    z-index: 20;
+}
+
+.card__number {
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    font-size: 19px;
+}
+
+.card__bio {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__back {
+    background-image: url("/images/bg-card-back.png");
+    border-radius: var(--card-border-radius);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    min-height: 160px;
+    position: relative;
+    top: -150px;
+    left: 10px;
+    max-width: 20rem;
+    margin: 0 auto;
+    z-index: 0;
+}
+
+.card__cvv {
+    color: var(--neutral-white);
+    font-size: 14px;
+
+
+    position: absolute;
+    top: 70px;
+    right: 35px;
+}
+
+// ============================
+
+// Form Component
+.form {
+    max-width: 20rem;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.form__input-container {
+    margin-bottom: 1rem;
+}
+
+.form__input {
+    outline: none;
+    padding: 1rem;
+    min-height: 40px;
+    border: 1px solid var(--neutral-light-grayish-violet);
+    border-radius: 9px;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+}
+
+.form__input::placeholder {
+    font-weight: bolder;
+    font-size: 16px;
+    color: var(--neutral-light-grayish-violet);
+}
+
+.form__input:focus {
+    border: 1px solid var(--neutral-very-dark-violet);
+}
+
+.form__label {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 0.7rem;
+
+    color: var(--neutral-very-dark-violet);
+}
+
+.form__card-exp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__card-exp > * {
+    width: 45%;
+}
+
+.form__lastDetail {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.form__btn {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 15px 30px;
+    border-radius: 9px;
+
+    color: var(--neutral-white);
+    background-color: var(--neutral-very-dark-violet);
+    font-weight: bolder;
+    font-size: 16px;
+    cursor: pointer;
+    margin-block: 1.5rem;
+}
+
+
+.form__input.error {
+    border: 1px solid red;
+}
+// =========================
+
+@media(min-width: 400px) {
+    // Card Component Styling
+    .card__number {
+        font-size: 21px;
+        letter-spacing: 1.5px;
+        // word-spacing: 0.5rem;
+    };
+    // ======================
+}
+
+@media(min-width: 820px) {
+    .App {
+        background-position: left top;
+        background-size: 30% 100%;
+        background-image: url("/images/bg-main-desktop.png");
+    };
+
+    .parent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // justify-content: space-between;
+        gap: 1rem;
+
+        min-height: 100vh;
+        padding-inline: 0.5rem;
+    }
+
+    .card__front {
+        top: -60px;
+        left: -80px;
+        padding-block: 1.5rem;
+    }
+
+    .card__number {
+        margin-bottom: 1.5rem;
+    }
+
+    .card__back {
+        top: -30px;
+        left: -40px;
+        min-height: 11rem;
+    }
+
+    .card__cvv {
+        top: 78px;
+    }
+}
