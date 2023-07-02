@@ -3,16 +3,11 @@
     min-height: 100vh;
 }
 
-// .hiddent {
-//     visibility: hidden;
-// }
-
 .error-message {
     color: var(--primary-red);
     font-size: 10px;
     font-weight: bolder;
     visibility: hidden;
-    // display: none;
 }
 
 .error-message.visible {
