@@ -45,6 +45,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    box-shadow: 30px 30px 20px -14px hsl(270, 3%, 87%);
 
     padding: 1.2rem;
     max-width: 20rem;
@@ -121,7 +122,7 @@
 .form__input::placeholder {
     font-weight: bolder;
     font-size: 16px;
-    color: var(--neutral-light-grayish-violet);
+    color: var(--neutral-dark-grayish-violet);
 }
 
 .form__input:focus {
@@ -130,7 +131,7 @@
 
 .form__label {
     text-transform: uppercase;
-    font-weight: bolder;
+    // font-weight: bolder;
     font-size: 14px;
     display: block;
     margin-bottom: 0.7rem;
@@ -214,6 +215,7 @@ small {
         padding-block: 1.5rem;
         width: 20rem;
         min-height: 12rem;
+        box-shadow: 60px 30px 35px -40px hsl(270, 3%, 87%);
     }
 
     .card__number {
@@ -225,6 +227,7 @@ small {
         left: -40px;
         min-height: 12rem;
         width: 20rem;
+        box-shadow: 60px 30px 35px -40px hsl(270, 3%, 87%);
     }
 
     .card__cvv {
