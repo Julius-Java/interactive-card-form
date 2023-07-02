@@ -155,7 +155,7 @@ function App() {
 
                     <small
                       className={"error-message " + (((inputError.monthExp || inputError.yearExp) || (formatError.yearExp || formatError.monthExp)) && "visible")}>
-                        {formatError.cvv ? "Wrong format, numbers only" : "Can't be blank"}
+                        {(formatError.monthExp || formatError.yearExp) ? "Wrong format, numbers only" : "Can't be blank"}
                     </small>
                   </div>
                 </div>
