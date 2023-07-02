@@ -33,7 +33,7 @@ Users should be able to:
 
 - Mobile View
 
-![](./public/screenshot/cardDekstop.png)
+![](./public/screenshot/cardDesktop.png)
 
 - Desktop View
 
