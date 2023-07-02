@@ -29,18 +29,18 @@ Users should be able to:
 
 ### Screenshot
 
-![](/images/screenshot/cardMobile.png)
+![](./public/screenshot/cardMobile.png)
 
 - Mobile View
 
-![](/images/screenshot/cardDesktop.png)
+![](./public/screenshot/cardMobile.png)
 
 - Desktop View
 
 ### Links
 
 - Solution URL: [Frontend Mentor](https://your-solution-url.com)
-- Live Site URL: [Vercel](https://your-live-site-url.com)
+- Live Site URL: [Vercel](https://interactive-card-form-five.vercel.app/)
 
 ## My process
 

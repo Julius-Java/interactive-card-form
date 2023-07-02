@@ -88,11 +88,12 @@ function App() {
         {/* FORM & THANK YOU*/}
         <main>
           {!validInputs ? (
-            <form className={"form"} autoCorrect="off" autoComplete="off" onSubmit={handleSubmit}>
+            <form className={"form"} autoComplete="off" onSubmit={handleSubmit}>
 
               <div className="form__input-container">
-                <label htmlFor="" className="form__label">cardholder name</label>
+                <label htmlFor="name" className="form__label">cardholder name</label>
                 <input
+                id="name"
                 name="name"
                 value={cardForm.name}
                 onChange={handleInput}
@@ -107,8 +108,9 @@ function App() {
               </div>
 
               <div className="form__input-container">
-                <label htmlFor="" className="form__label">card number</label>
+                <label htmlFor="number" className="form__label">card number</label>
                 <input
+                id="number"
                 name="number"
                 value={cardForm.number}
                 maxLength="16"
@@ -125,9 +127,10 @@ function App() {
 
               <div className="form__lastDetail">
                 <div className="form__input-container">
-                  <label htmlFor="" className="form__label">exp. date (MM/YY)</label>
+                  <label htmlFor="expMonth-year" className="form__label">exp. date (MM/YY)</label>
                   <div className="form__card-exp">
                     <input
+                    id="expMonth-Year"
                     name="monthExp"
                     value={cardForm.monthExp}
                     onChange={handleInput}
@@ -138,6 +141,7 @@ function App() {
                     />
 
                     <input
+                    id="expMonth-year"
                     name="yearExp"
                     value={cardForm.yearExp}
                     onChange={handleInput}
@@ -157,8 +161,9 @@ function App() {
                 </div>
 
                 <div className="form__input-container">
-                  <label htmlFor="" className="form__label">cvv</label>
+                  <label htmlFor="cvv" className="form__label">cvv</label>
                   <input
+                  id="cvv"
                   name="cvv"
                   value={cardForm.cvv}
                   onChange={handleInput}
