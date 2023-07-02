@@ -14,10 +14,6 @@
     visibility: visible;
 }
 
-h1 {
-    color: green;
-}
-
 .App {
     background-color: var(--neutral-white);
     background-image: url("/images/bg-main-mobile.png");
@@ -62,8 +58,8 @@ h1 {
 .card__number {
     margin-bottom: 1rem;
     width: 100%;
-    text-align: center;
     font-size: 19px;
+    font-weight: bolder;
 }
 
 .card__bio {
@@ -104,7 +100,7 @@ h1 {
 .form {
     max-width: 20rem;
     width: 95%;
-    margin: 0 auto;
+    margin: 0 auto 1rem;
 }
 
 .form__input-container {
@@ -173,7 +169,8 @@ h1 {
     font-weight: bolder;
     font-size: 16px;
     cursor: pointer;
-    margin-block: 1.5rem;
+    // margin-block: 1.5rem;
+    margin-top: 1rem;
 }
 
 
@@ -191,12 +188,11 @@ small {
     // Card Component Styling
     .card__number {
         letter-spacing: 1.5px;
-        // word-spacing: 0.5rem;
     };
     // ======================
 }
 
-@media(min-width: 820px) {
+@media(min-width: 940px) {
     .App {
         background-position: left top;
         background-size: 30% 100%;
@@ -216,6 +212,8 @@ small {
         top: -60px;
         left: -80px;
         padding-block: 1.5rem;
+        width: 30rem;
+        min-height: 12rem;
     }
 
     .card__number {
@@ -225,10 +223,11 @@ small {
     .card__back {
         top: -30px;
         left: -40px;
-        min-height: 11rem;
+        min-height: 12rem;
+        width: 20rem;
     }
 
     .card__cvv {
-        top: 78px;
+        top: 85px;
     }
 }

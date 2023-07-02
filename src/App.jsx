@@ -149,8 +149,9 @@ function App() {
 
                     {/* Fix UI */}
 
-                    <small className={"error-message " + ((inputError.number || (formatError.yearExp || formatError.monthExp)) && "visible")}>
-                    {formatError.number ? "Wrong format, numbers only" : "Can't be blank"}
+                    <small
+                      className={"error-message " + (((inputError.monthExp || inputError.yearExp) || (formatError.yearExp || formatError.monthExp)) && "visible")}>
+                        {formatError.cvv ? "Wrong format, numbers only" : "Can't be blank"}
                     </small>
                   </div>
                 </div>
@@ -169,8 +170,8 @@ function App() {
 
                   {/* Fix UI */}
 
-                  <small className={"error-message " + ((inputError.number || formatError.cvv) && "visible")}>
-                  {formatError.number ? "Wrong format, numbers only" : "Can't be blank"}
+                  <small className={"error-message " + ((inputError.cvv || formatError.cvv) && "visible")}>
+                  {formatError.cvv ? "Wrong format, numbers only" : "Can't be blank"}
                   </small>
 
                 </div>

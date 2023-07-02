@@ -1,22 +1,3 @@
-// export function cardValidator(inputObj) {
-
-//     // If array is returned, there are empty fields; else no empty field
-//     const fieldStatus = emptyCheck(inputObj)
-
-//     // If array is returned, some inputs are in wrong format; else format is correct
-//     const formatStatus = formatCheck(inputObj)
-
-//     if (fieldStatus) {
-//         return fieldStatus;
-//     } else {
-//       if (formatStatus) {
-//         return formatStatus;
-//       } else {
-//         return false;
-//       }
-//     }
-// }
-
 export function emptyCheck(inputObj) {
     const invalidProperties = [];
 
@@ -25,8 +6,6 @@ export function emptyCheck(inputObj) {
         invalidProperties.push(key);
       }
     }
-
-    // console.log(invalidProperties)
 
   // if properties array is empty, no empty field else return empty fields and count
   return invalidProperties.length === 0 ? false : invalidProperties;
@@ -43,10 +22,8 @@ export function formatCheck(inputObj) {
     if (!regex.test(checkFormats[key])) {
       wrongFormatInputs.push(key)
     }
-    // console.log(checkFormats[key])
   }
 
-  // console.log(wrongFormatInputs)
 
   // if inputs array is empty, all input formats are correct; else some input formats wrong
   return (wrongFormatInputs.length === 0 ? false : wrongFormatInputs)
