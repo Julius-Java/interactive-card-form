@@ -45,7 +45,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    box-shadow: 30px 30px 20px -14px hsl(270, 3%, 87%);
+    box-shadow: 50px 50px 20px -40px hsl(270, 3%, 87%);
 
     padding: 1.2rem;
     max-width: 20rem;
@@ -61,6 +61,7 @@
     width: 100%;
     font-size: 19px;
     font-weight: bolder;
+    letter-spacing: 1.5px;
 }
 
 .card__bio {
