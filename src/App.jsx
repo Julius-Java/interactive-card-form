@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./scss/App.scss"
 import cardLogo from "/images/card-logo.svg"
 import {numberFormatter, emptyCheck, formatCheck} from "./utils"
+import ThankYou from "./components/ThankYou"
 
 
 function App() {
@@ -47,9 +48,8 @@ function App() {
         formatInputs.forEach((item) => {
           setFormatError(preValue => ({...preValue, [item] : true}))
         })
-        // console.log(formatInputs)
       } else {
-        console.log("Format Correct")
+        setValidInputs(true)
       }
     }
   }
@@ -64,6 +64,7 @@ function App() {
   return (
     <div className="App">
       <div className="parent container">
+        {/* CARD */}
         <aside className="card">
           <div className="card__front">
             <img src={cardLogo} className="card__logo" alt="" />
@@ -83,28 +84,31 @@ function App() {
             </h4>
           </div>
         </aside>
-        <main>
-          <form className={"form"} autoCorrect="off" autoComplete="off" onSubmit={handleSubmit}>
 
-            <div className="form__input-container">
-              <label htmlFor="" className="form__label">cardholder name</label>
-              <input
+        {/* FORM & THANK YOU*/}
+        <main>
+          {!validInputs ? (
+            <form className={"form"} autoCorrect="off" autoComplete="off" onSubmit={handleSubmit}>
+
+              <div className="form__input-container">
+                <label htmlFor="" className="form__label">cardholder name</label>
+                <input
                 name="name"
                 value={cardForm.name}
                 onChange={handleInput}
                 placeholder="e.g Jane Appleseed"
                 type="text"
                 className={"form__input " + (inputError.name && "error")}
-              />
+                />
 
-              <small className={"error-message " + (inputError.name && "visible")}>
+                <small className={"error-message " + (inputError.name && "visible")}>
                 Can&apos;t be blank
-              </small>
-            </div>
+                </small>
+              </div>
 
-            <div className="form__input-container">
-              <label htmlFor="" className="form__label">card number</label>
-              <input
+              <div className="form__input-container">
+                <label htmlFor="" className="form__label">card number</label>
+                <input
                 name="number"
                 value={cardForm.number}
                 maxLength="16"
@@ -112,18 +116,18 @@ function App() {
                 placeholder="e.g. 1234 578 9123 0000"
                 type="text"
                 className={"form__input " + ((inputError.number || formatError.number) && "error")}
-              />
+                />
 
-              <small className={"error-message " + ((inputError.number || formatError.number) && "visible")}>
+                <small className={"error-message " + ((inputError.number || formatError.number) && "visible")}>
                 {formatError.number ? "Wrong format, numbers only" : "Can't be blank"}
-              </small>
-            </div>
+                </small>
+              </div>
 
-            <div className="form__lastDetail">
-              <div className="form__input-container">
-                <label htmlFor="" className="form__label">exp. date (MM/YY)</label>
-                <div className="form__card-exp">
-                  <input
+              <div className="form__lastDetail">
+                <div className="form__input-container">
+                  <label htmlFor="" className="form__label">exp. date (MM/YY)</label>
+                  <div className="form__card-exp">
+                    <input
                     name="monthExp"
                     value={cardForm.monthExp}
                     onChange={handleInput}
@@ -131,9 +135,9 @@ function App() {
                     type="text"
                     className={"form__input " + ((inputError.monthExp || formatError.monthExp) && "error")}
                     maxLength='2'
-                  />
+                    />
 
-                  <input
+                    <input
                     name="yearExp"
                     value={cardForm.yearExp}
                     onChange={handleInput}
@@ -141,20 +145,19 @@ function App() {
                     type="text"
                     className={"form__input " + ((inputError.yearExp || formatError.yearExp) && "error")}
                     maxLength="2"
-                  />
+                    />
 
-                  {/* Fix UI */}
+                    {/* Fix UI */}
 
-                  <small className={"error-message " + ((inputError.number || formatError.number) && "visible")}>
+                    <small className={"error-message " + ((inputError.number || (formatError.yearExp || formatError.monthExp)) && "visible")}>
                     {formatError.number ? "Wrong format, numbers only" : "Can't be blank"}
-                  </small>
-
+                    </small>
+                  </div>
                 </div>
-              </div>
 
-              <div className="form__input-container">
-                <label htmlFor="" className="form__label">cvv</label>
-                <input
+                <div className="form__input-container">
+                  <label htmlFor="" className="form__label">cvv</label>
+                  <input
                   name="cvv"
                   value={cardForm.cvv}
                   onChange={handleInput}
@@ -162,17 +165,26 @@ function App() {
                   type="text"
                   className={"form__input " + ((inputError.cvv || formatError.cvv) && "error")}
                   maxLength="3"
-                />
+                  />
 
-                <small className={"error-message " + ((inputError.number || formatError.number) && "visible")}>
+                  {/* Fix UI */}
+
+                  <small className={"error-message " + ((inputError.number || formatError.cvv) && "visible")}>
                   {formatError.number ? "Wrong format, numbers only" : "Can't be blank"}
-                </small>
+                  </small>
 
+                </div>
               </div>
-            </div>
-            <button className="form__btn">Confirm</button>
-          </form>
+              <button className="form__btn">Confirm</button>
+            </form>
+          ) :
+          (
+            <ThankYou />
+          )}
+
         </main>
+
+
       </div>
     </div>
   )

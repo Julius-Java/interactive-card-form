@@ -1,0 +1,30 @@
+.complete {
+    max-width: 21rem;
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.complete__logo {
+    margin-bottom: 1.5rem;
+}
+
+.complete__heading {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.complete__btn {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 15px 30px;
+    border-radius: 9px;
+
+    color: var(--neutral-white);
+    background-color: var(--neutral-very-dark-violet);
+    font-weight: bolder;
+    font-size: 16px;
+    cursor: pointer;
+    margin-block: 1.8rem;
+}
