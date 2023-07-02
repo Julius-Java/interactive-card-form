@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+README-guide.md
+style-guide.md
+vite.config.json
+design
